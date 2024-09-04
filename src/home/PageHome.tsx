@@ -28,7 +28,7 @@ export default function PageHome() {
 
     return <>
         <div className="py-8 px-8 lg:px-24 xl:px-72 2xl:px-96">
-            <h1 className="text-2xl font-bold mb-1">StudyThere BAID</h1>
+            <h1 className="text-2xl font-bold mb-1">StudyThere for BAID</h1>
             <p className="mb-3">{t('description')}</p>
             <button className="w-64 rounded-full bg-blue-500 hover:bg-blue-600 hover:shadow-lg
                      transition-colors duration-100 p-3 font-display text-white font-bold mb-2"
