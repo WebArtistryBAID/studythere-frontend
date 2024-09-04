@@ -1,0 +1,41 @@
+{
+  "description": "一个众包数据找空教室的工具。",
+  "error": {
+    "message": "发生了一个错误",
+    "home": "返回主页"
+  },
+  "home": {
+    "contribute": "贡献你的日程安排",
+    "contributeDetails": "通过贡献您的日程安排，您可以向我们提供有关每个房间课程的信息。这有助于我们向每个人提供更准确的信息。",
+    "contributeSuccess": "感谢您的贡献，{{name}}。如果日程安排有更新，您可以再次贡献。",
+    "roomError": "房间信息获取失败",
+    "room": {
+      "available": "此房间目前没有课程。",
+      "scheduled": "当前课程: {{activity}}",
+      "contributor": "贡献者: {{name}}"
+    }
+  },
+  "login": {
+    "baid": "北京中学国际部",
+    "title": "授权登录",
+    "hint": "您想要授权 <1>StudyThere</1> 使用您的以下信息吗?",
+    "privacy": "希悦是由北京悦活教育科技有限责任公司运营的产品，继续登录即代表您同意希悦的有关条款与条件。",
+    "permissions": {
+      "name": "StudyThere 会获得您的真实姓名。",
+      "eduId": "StudyThere 会获得您的北京教育 ID。",
+      "schedules": "StudyThere 会获得您的日程安排。",
+      "noPassword": "StudyThere 不会获得您的密码。"
+    },
+    "onboarding": {
+      "error": "登录时出现了一个错误，请再重试。",
+      "tryAgain": "重试",
+      "welcome": "欢迎",
+      "welcomeMessage": "您已成功以 {{name}} 的身份登录，现可以使用 StudyThere的各项服务。",
+      "continue": "继续"
+    }
+  },
+  "a11y": {
+    "loading": "加载中",
+    "skipToMain": "跳转到主内容"
+  }
+}
