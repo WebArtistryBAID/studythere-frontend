@@ -3,7 +3,7 @@ import {useQuery} from '@tanstack/react-query'
 import {getCurrentActivity} from '../data/api.ts'
 import {useTranslation} from 'react-i18next'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCalendar, faCircleCheck, faThumbsUp} from '@fortawesome/free-solid-svg-icons'
+import {faCalendar, faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import {RoomActivityResponseType} from '../data/apiDataTypes.ts'
 
 export default function RoomBlock({ room }: { room: RoomSchema }) {
@@ -45,10 +45,6 @@ export default function RoomBlock({ room }: { room: RoomSchema }) {
                 <FontAwesomeIcon icon={faCalendar} className="text-black mr-2"/>
                 <span>{t('home.room.live', {activity: roomData.data.activity!.name})}</span>
             </p>
-            <p className="flex items-center text-sm">
-                <FontAwesomeIcon icon={faThumbsUp} className="text-black mr-2"/>
-                <span>{t('home.room.contributor', {name: roomData.data.activity!.contributor == null ? t('home.room.anonymous') : roomData.data.activity!.contributor.name})}</span>
-            </p>
         </div>
     }
 
@@ -57,10 +53,6 @@ export default function RoomBlock({ room }: { room: RoomSchema }) {
         <p className="mb-1 flex items-center text-sm">
             <FontAwesomeIcon icon={faCalendar} className="text-black mr-2"/>
             <span>{t('home.room.upcoming', {activity: roomData.data.activity!.name})}</span>
-        </p>
-        <p className="flex items-center text-sm">
-            <FontAwesomeIcon icon={faThumbsUp} className="text-black mr-2"/>
-            <span>{t('home.room.contributor', {name: roomData.data.activity!.contributor == null ? t('home.room.anonymous') : roomData.data.activity!.contributor.name})}</span>
         </p>
     </div>
 }
