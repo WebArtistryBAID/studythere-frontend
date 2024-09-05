@@ -16,8 +16,8 @@ export default function RoomBlock({ room }: { room: RoomSchema }) {
     })
     if (roomData.isPending) {
         return <div className="bg-gray-50 rounded-3xl px-8 py-5">
-            <div className="bg-gray-100 rounded-3xl w-32 h-8 mb-3"></div>
-            <div className="bg-gray-100 rounded-3xl w-72 h-8"></div>
+            <div className="bg-gray-100 rounded-3xl w-1/2 h-8 mb-3"></div>
+            <div className="bg-gray-100 rounded-3xl w-full h-8"></div>
         </div>
     }
     if (roomData.isError || 'detail' in roomData.data) {
