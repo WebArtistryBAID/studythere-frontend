@@ -11,7 +11,8 @@
     "roomError": "房间信息获取失败",
     "room": {
       "available": "此房间目前没有课程。",
-      "scheduled": "当前课程: {{activity}}",
+      "live": "正在进行: {{activity}}",
+      "upcoming": "即将开始: {{activity}}",
       "contributor": "贡献者: {{name}}",
       "anonymous": "匿名"
     }

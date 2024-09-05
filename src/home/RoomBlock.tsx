@@ -4,6 +4,7 @@ import {getCurrentActivity} from '../data/api.ts'
 import {useTranslation} from 'react-i18next'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCalendar, faCircleCheck, faThumbsUp} from '@fortawesome/free-solid-svg-icons'
+import {RoomActivityResponseType} from '../data/apiDataTypes.ts'
 
 export default function RoomBlock({ room }: { room: RoomSchema }) {
     const { t } = useTranslation()
@@ -19,14 +20,14 @@ export default function RoomBlock({ room }: { room: RoomSchema }) {
             <div className="bg-gray-100 rounded-3xl w-72 h-8"></div>
         </div>
     }
-    if (roomData.isError || (typeof roomData.data === 'object' && 'detail' in roomData.data)) {
+    if (roomData.isError || 'detail' in roomData.data) {
         return <div className="bg-gray-50 rounded-3xl px-8 py-5">
             <p className="text-xl mb-1 font-bold">{room.id}</p>
             <p className="text-sm">{t('home.roomError')}</p>
         </div>
     }
 
-    if (typeof roomData.data === 'string') {
+    if (roomData.data.type === RoomActivityResponseType.none) {
         // None for available
         return <div className="bg-lime-50 rounded-3xl px-8 py-5">
             <p className="text-xl mb-1 font-bold">{room.id}</p>
@@ -37,15 +38,29 @@ export default function RoomBlock({ room }: { room: RoomSchema }) {
         </div>
     }
 
+    if (roomData.data.type === RoomActivityResponseType.live) {
+        return <div className="bg-gray-50 rounded-3xl px-8 py-5">
+            <p className="text-xl mb-1 font-bold">{room.id}</p>
+            <p className="mb-1 flex items-center text-sm">
+                <FontAwesomeIcon icon={faCalendar} className="text-black mr-2"/>
+                <span>{t('home.room.live', {activity: roomData.data.activity!.name})}</span>
+            </p>
+            <p className="flex items-center text-sm">
+                <FontAwesomeIcon icon={faThumbsUp} className="text-black mr-2"/>
+                <span>{t('home.room.contributor', {name: roomData.data.activity!.contributor == null ? t('home.room.anonymous') : roomData.data.activity!.contributor.name})}</span>
+            </p>
+        </div>
+    }
+
     return <div className="bg-gray-50 rounded-3xl px-8 py-5">
         <p className="text-xl mb-1 font-bold">{room.id}</p>
         <p className="mb-1 flex items-center text-sm">
             <FontAwesomeIcon icon={faCalendar} className="text-black mr-2"/>
-            <span>{t('home.room.scheduled', { activity: roomData.data.name })}</span>
+            <span>{t('home.room.upcoming', {activity: roomData.data.activity!.name})}</span>
         </p>
         <p className="flex items-center text-sm">
             <FontAwesomeIcon icon={faThumbsUp} className="text-black mr-2"/>
-            <span>{t('home.room.contributor', {name: roomData.data.contributor == null ? t('home.room.anonymous') : roomData.data.contributor.name})}</span>
+            <span>{t('home.room.contributor', {name: roomData.data.activity!.contributor == null ? t('home.room.anonymous') : roomData.data.activity!.contributor.name})}</span>
         </p>
     </div>
 }

@@ -1,5 +1,5 @@
-import { PeriodSchema, RoomActivitySchema, RoomSchema } from './dataTypes.ts'
-import { GenericError, LoginRedirectTarget } from './apiDataTypes.ts'
+import {PeriodSchema, RoomSchema} from './dataTypes.ts'
+import {GenericError, LoginRedirectTarget, RoomActivityResponseSchema} from './apiDataTypes.ts'
 
 export async function get(endpoint: string, query = new Map<string, string>(), token: string | null = null): Promise<any> {
     const entries = Array.from(query.entries())
@@ -88,7 +88,7 @@ export async function getPeriods(): Promise<PeriodSchema[] | GenericError> {
     return await get('periods')
 }
 
-export async function getCurrentActivity(roomId: string): Promise<RoomActivitySchema | string | GenericError> {
+export async function getCurrentActivity(roomId: string): Promise<RoomActivityResponseSchema | GenericError> {
     return await get('room/current', new Map([['room', roomId]]))
 }
 

@@ -11,7 +11,8 @@
     "roomError": "Failed to retrieve room information",
     "room": {
       "available": "No classes are currently in this room.",
-      "scheduled": "Current Class: {{activity}}",
+      "live": "Live: {{activity}}",
+      "upcoming": "Upcoming: {{activity}}",
       "contributor": "Contributed By: {{name}}",
       "anonymous": "Anonymous"
     }
