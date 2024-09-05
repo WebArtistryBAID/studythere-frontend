@@ -12,7 +12,8 @@
     "room": {
       "available": "No classes are currently in this room.",
       "scheduled": "Current Class: {{activity}}",
-      "contributor": "Contributed By: {{name}}"
+      "contributor": "Contributed By: {{name}}",
+      "anonymous": "Anonymous"
     }
   },
   "login": {

@@ -1,9 +1,9 @@
-import { RoomSchema } from '../data/dataTypes.ts'
-import { useQuery } from '@tanstack/react-query'
-import { getCurrentActivity } from '../data/api.ts'
-import { useTranslation } from 'react-i18next'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendar, faCircleCheck, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import {RoomSchema} from '../data/dataTypes.ts'
+import {useQuery} from '@tanstack/react-query'
+import {getCurrentActivity} from '../data/api.ts'
+import {useTranslation} from 'react-i18next'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCalendar, faCircleCheck, faThumbsUp} from '@fortawesome/free-solid-svg-icons'
 
 export default function RoomBlock({ room }: { room: RoomSchema }) {
     const { t } = useTranslation()
@@ -45,7 +45,7 @@ export default function RoomBlock({ room }: { room: RoomSchema }) {
         </p>
         <p className="flex items-center text-sm">
             <FontAwesomeIcon icon={faThumbsUp} className="text-black mr-2"/>
-            <span>{t('home.room.contributor', { name: roomData.data.contributor.name })}</span>
+            <span>{t('home.room.contributor', {name: roomData.data.contributor == null ? t('home.room.anonymous') : roomData.data.contributor.name})}</span>
         </p>
     </div>
 }

@@ -13,7 +13,7 @@ export interface RoomActivitySchema {
     people: string
     roomId: number
     periodId: number
-    contributor: UserSchema
+    contributor: UserSchema | null
 }
 
 export interface RoomSchema {

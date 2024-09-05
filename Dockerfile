@@ -3,7 +3,7 @@ WORKDIR .
 CMD ["mkdir", "studythere-frontend"]
 COPY . ./studythere-frontend/
 WORKDIR studythere-frontend
-RUN npm install
+RUN npm install --registry=http://registry.npmmirror.com/
 RUN npm run build
 FROM nginx:stable-alpine as runtime
 COPY --from=builder /studythere-frontend/dist /usr/share/nginx/html
