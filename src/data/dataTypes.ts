@@ -19,6 +19,11 @@ export interface RoomActivitySchema {
 export interface RoomSchema {
     id: string
     description: string
+}
+
+export interface RoomSchemaExpanded {
+    id: string
+    description: string
     activities: RoomActivitySchema[]
 }
 
