@@ -24,9 +24,10 @@
     "privacy": "SEIUE is a product operated by Beijing Yuehuo Education Technology Limited. By continuing to log in, you indicate your agreement to SEIUE's terms and conditions.",
     "permissions": {
       "name": "StudyThere will receive your real name.",
-      "eduId": "StudyThere will receive your Beijing Education ID.",
+      "eduId": "StudyThere will receive your SEIUE user ID.",
       "schedules": "StudyThere will receive your calendar schedules.",
-      "noPassword": "StudyThere will not be able to receive your password."
+      "noPassword": "StudyThere will not be able to receive your password.",
+      "privacy": "Your information will remain private, only your schedules will be displayed."
     },
     "onboarding": {
       "error": "An error occurred while logging in, please try again.",

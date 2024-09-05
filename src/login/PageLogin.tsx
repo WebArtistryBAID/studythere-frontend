@@ -1,11 +1,11 @@
-import { useQuery } from '@tanstack/react-query'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useNavigate, useParams } from 'react-router-dom'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import { Trans, useTranslation } from 'react-i18next'
+import {useQuery} from '@tanstack/react-query'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {useNavigate, useParams} from 'react-router-dom'
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
+import {Trans, useTranslation} from 'react-i18next'
 import Error from '../common/Error.tsx'
 import Loading from '../common/Loading.tsx'
-import { getLoginRedirectTarget } from '../data/api.ts'
+import {getLoginRedirectTarget} from '../data/api.ts'
 
 export default function PageLogin(): JSX.Element {
     const navigate = useNavigate()
@@ -45,6 +45,7 @@ export default function PageLogin(): JSX.Element {
                     <li>{t('login.permissions.eduId')}</li>
                     <li>{t('login.permissions.schedules')}</li>
                     <li>{t('login.permissions.noPassword')}</li>
+                    <li>{t('login.permissions.privacy')}</li>
                 </ul>
 
                 <p className="text-xs text-gray-400 mb-5">{t('login.privacy')}</p>

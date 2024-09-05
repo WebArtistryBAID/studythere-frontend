@@ -24,9 +24,10 @@
     "privacy": "希悦是由北京悦活教育科技有限责任公司运营的产品，继续登录即代表您同意希悦的有关条款与条件。",
     "permissions": {
       "name": "StudyThere 会获得您的真实姓名。",
-      "eduId": "StudyThere 会获得您的北京教育 ID。",
+      "eduId": "StudyThere 会获得您的希悦用户 ID。",
       "schedules": "StudyThere 会获得您的日程安排。",
-      "noPassword": "StudyThere 不会获得您的密码。"
+      "noPassword": "StudyThere 不会获得您的密码。",
+      "privacy": "您的信息不会公开显示，我们只会显示您提供的房间课表信息。"
     },
     "onboarding": {
       "error": "登录时出现了一个错误，请再重试。",
